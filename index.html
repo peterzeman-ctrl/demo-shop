@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demo Shop – Checkout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Demo Shop</div>
+    <div class="secure">🔒 Secure checkout</div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Checkout</h1>
+      <p class="muted">Review your cart and click Pay to continue.</p>
+
+      <div id="cart" class="cart"></div>
+
+      <div class="row">
+        <div class="col">
+          <label class="label">Email</label>
+          <input id="email" class="input" type="email" placeholder="peter@example.com" value="demo@example.com" />
+        </div>
+        <div class="col">
+          <label class="label">Shipping</label>
+          <select id="shipping" class="input">
+            <option value="4.90">Standard (2–4 days) — €4.90</option>
+            <option value="9.90">Express (1–2 days) — €9.90</option>
+          </select>
+        </div>
+      </div>
+
+      <label class="checkbox">
+        <input id="terms" type="checkbox" checked />
+        <span>I accept Terms & Conditions</span>
+      </label>
+
+      <div class="summary">
+        <div class="line"><span>Subtotal</span><span id="subtotal">€0.00</span></div>
+        <div class="line"><span>Shipping</span><span id="shippingCost">€0.00</span></div>
+        <div class="line total"><span>Total</span><span id="total">€0.00</span></div>
+      </div>
+
+      <button id="payBtn" class="pay">Pay</button>
+
+      <div id="hint" class="hint">
+        This is a demo checkout. Clicking Pay redirects to the hosted payment page.
+      </div>
+    </section>
+
+    <aside class="card side">
+      <h2>What you’re demonstrating</h2>
+      <ul class="bullets">
+        <li>Merchant checkout UX (cart → pay)</li>
+        <li>Redirect into Hosted Payment Page</li>
+        <li>Localized HPP + payment completion experience</li>
+      </ul>
+      <div class="pill">Tip: Use full-screen browser for the demo</div>
+    </aside>
+  </main>
+
+  <div id="overlay" class="overlay hidden">
+    <div class="spinner"></div>
+    <div class="overlayText">Redirecting to payment…</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
