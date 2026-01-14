@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Demo Shop – Payment Confirmation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Demo Shop</div>
+    <div class="secure">✅ Payment confirmed</div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="successHeader">
+        <div class="successIcon">✓</div>
+        <div>
+          <h1>Thank you for your purchase!</h1>
+          <p class="muted">
+            Your payment was successful. We’re preparing your order and will email you the confirmation shortly.
+          </p>
+        </div>
+      </div>
+
+      <div class="orderBox">
+        <div class="line"><span>Order number</span><span class="mono" id="orderId">DS-24001</span></div>
+        <div class="line"><span>Date</span><span id="orderDate">—</span></div>
+        <div class="line"><span>Payment status</span><span class="badge ok">Paid</span></div>
+        <div class="line"><span>Estimated delivery</span><span id="eta">2–4 business days</span></div>
+      </div>
+
+      <h2 class="h2">Order summary</h2>
+      <div id="summaryItems" class="cart"></div>
+
+      <div class="summary">
+        <div class="line"><span>Subtotal</span><span id="subtotal">€0.00</span></div>
+        <div class="line"><span>Shipping</span><span id="shippingCost">€0.00</span></div>
+        <div class="line total"><span>Total</span><span id="total">€0.00</span></div>
+      </div>
+
+      <div class="actions">
+        <a class="btn secondary" href="./index.html">Back to shop</a>
+        <button class="btn primary" id="downloadBtn">Download receipt</button>
+      </div>
+
+      <div class="hint">
+        If you have questions, contact support with your order number.
+      </div>
+    </section>
+
+    <aside class="card side">
+      <h2>Next steps</h2>
+      <ul class="bullets">
+        <li>Order confirmation sent by email</li>
+        <li>We’ll notify you when the order ships</li>
+        <li>You can use the order number for support inquiries</li>
+      </ul>
+
+      <div class="pill">Demo-only page (static)</div>
+
+      <div class="smallMuted">
+        Tip: You can pass <span class="mono">?orderId=...</span> (optional) to display a specific order number.
+      </div>
+    </aside>
+  </main>
+
+  <script src="confirmation.js"></script>
+</body>
+</html>
