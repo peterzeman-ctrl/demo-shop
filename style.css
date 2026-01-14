@@ -137,5 +137,89 @@ h2 { margin: 0 0 10px; font-size: 18px; }
 .container {
   grid-template-columns: 1fr;
 }
+/* Confirmation page additions */
+.successHeader {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.successIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-size: 28px;
+  background: rgba(255,255,255,0.05);
+}
+
+.orderBox {
+  margin: 14px 0 14px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  border: 1px solid var(--border);
+}
+.badge.ok {
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+}
+
+.h2 { margin: 16px 0 10px; font-size: 18px; }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+}
+.btn.primary {
+  background: var(--btn);
+  border-color: transparent;
+  color: #fff;
+}
+.btn.primary:hover { background: var(--btnHover); }
+.btn.secondary:hover { background: rgba(255,255,255,0.06); }
+
+.smallMuted {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 
 
