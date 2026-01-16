@@ -1,9 +1,12 @@
 // Put your pre-generated hosted payment page redirect URLs here.
 // They will be rotated on every page load (refresh).
 const HPP_REDIRECT_URLS = [
-  "https://computop-paygate.com/paymentpage.aspx?token=40a44c4761af415c9e6c9a571422db4d",
-  "https://computop-paygate.com/paymentpage.aspx?token=d72b7b107d474d8e83a4a5e223987cb9",
-  "https://computop-paygate.com/paymentpage.aspx?token=82f833981d1d491d9eecc0aa04274a07",
+  "https://computop-paygate.com/paymentpage.aspx?token=fb0830713b05472788d6b551ff50a21a",
+  "https://computop-paygate.com/paymentpage.aspx?token=3c86614b03874d4fbf9b225515e7ac8a",
+  "https://computop-paygate.com/paymentpage.aspx?token=1b8676226bec4247afa97409efbdb29d",
+  "https://computop-paygate.com/paymentpage.aspx?token=8a60edf00a9a40a39cd8e94206bfad45",
+  "https://computop-paygate.com/paymentpage.aspx?token=d2acabbf4b4943b0a1b5b6073dd2b168",
+  "https://computop-paygate.com/paymentpage.aspx?token=504b0c69fb1d42bf830ff37f3009b1a0",
   // ...
 ];
 
@@ -104,4 +107,5 @@ document.addEventListener("DOMContentLoaded", () => {
     redirectToHpp();
   });
 });
+
 
