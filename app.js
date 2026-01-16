@@ -1,16 +1,51 @@
-// ✅ Put your hosted payment page redirect URL here:
-const HPP_REDIRECT_URL = "https://computop-paygate.com/paymentpage.aspx?token=637b7639353e4c0da25315bf7b283593";
+// Put your pre-generated hosted payment page redirect URLs here.
+// They will be rotated on every page load (refresh).
+const HPP_REDIRECT_URLS = [
+  "https://computop-paygate.com/paymentpage.aspx?token=b4c2cb6cb6ca454d84988096f8a24d86",
+  "https://computop-paygate.com/paymentpage.aspx?token=49cb020432ab4f329a44403843abb3cd",
+  "https://computop-paygate.com/paymentpage.aspx?token=bf25208826f942f1b1f48069a4ca4fc6",
+  // ...
+];
 
+const STORAGE_KEY = "demoShop_hppUrlIndex";
+
+// ---- Demo cart (unchanged) ----
 const cartItems = [
   { name: "Nordic Winter Jacket", desc: "Size L • Color Black", price: 49.90 },
   { name: "Wool Beanie", desc: "One size • Grey", price: 12.90 },
 ];
 
-const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "NOK" }).format(n);
+const fmt = (n) =>
+  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(n);
 
+// Picks the next URL on each page load and persists the index.
+// If you open in a new browser/profile, rotation starts at 0 again.
+function pickNextHppUrl() {
+  if (!Array.isArray(HPP_REDIRECT_URLS) || HPP_REDIRECT_URLS.length === 0) return "";
+
+  const raw = localStorage.getItem(STORAGE_KEY);
+  const lastIndex = raw === null ? -1 : Number(raw);
+
+  // Next index (wrap around)
+  const nextIndex = Number.isFinite(lastIndex)
+    ? (lastIndex + 1) % HPP_REDIRECT_URLS.length
+    : 0;
+
+  localStorage.setItem(STORAGE_KEY, String(nextIndex));
+
+  return HPP_REDIRECT_URLS[nextIndex];
+}
+
+// Optional: show which URL index is selected in console (useful for debugging)
+const SELECTED_HPP_URL = pickNextHppUrl();
+console.log("Selected HPP URL:", SELECTED_HPP_URL);
+
+// ---- UI rendering (unchanged) ----
 function renderCart() {
   const cart = document.getElementById("cart");
-  cart.innerHTML = cartItems.map(i => `
+  cart.innerHTML = cartItems
+    .map(
+      (i) => `
     <div class="item">
       <div>
         <div class="name">${i.name}</div>
@@ -18,7 +53,9 @@ function renderCart() {
       </div>
       <div class="price">${fmt(i.price)}</div>
     </div>
-  `).join("");
+  `
+    )
+    .join("");
 }
 
 function updateTotals() {
@@ -31,17 +68,12 @@ function updateTotals() {
 }
 
 function redirectToHpp() {
-  // Optional: append some demo-only context (ONLY if your HPP ignores unknown params)
-  // If your redirect URL is strict/signed, do NOT append anything.
-  const email = document.getElementById("email").value.trim();
-  const url = HPP_REDIRECT_URL;
-
   const overlay = document.getElementById("overlay");
   overlay.classList.remove("hidden");
 
   // Small delay to make the demo feel “real”
   setTimeout(() => {
-    window.location.href = url;
+    window.location.href = SELECTED_HPP_URL;
   }, 600);
 }
 
@@ -57,13 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
       alert("Please accept Terms & Conditions.");
       return;
     }
-    if (!HPP_REDIRECT_URL || HPP_REDIRECT_URL.includes("YOUR-PREGENERATED-REDIRECT-URL")) {
-      alert("Set HPP_REDIRECT_URL in app.js first.");
+
+    if (!SELECTED_HPP_URL) {
+      alert("No hosted payment page URLs configured. Add URLs to HPP_REDIRECT_URLS in app.js.");
       return;
     }
+
+    // Safety: prevent placeholder usage
+    if (SELECTED_HPP_URL.includes("YOUR-REDIRECT-URL")) {
+      alert("Replace the placeholder URLs in HPP_REDIRECT_URLS in app.js.");
+      return;
+    }
+
     redirectToHpp();
   });
 });
-
-
-
