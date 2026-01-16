@@ -1,5 +1,5 @@
 // ✅ Put your hosted payment page redirect URL here:
-const HPP_REDIRECT_URL = "https://test.computop-paygate.com/paymentpage.aspx?token=4207a112988045f5b730c70780fa7477";
+const HPP_REDIRECT_URL = "https://computop-paygate.com/paymentpage.aspx?token=637b7639353e4c0da25315bf7b283593";
 
 const cartItems = [
   { name: "Nordic Winter Jacket", desc: "Size L • Color Black", price: 49.90 },
@@ -64,4 +64,5 @@ document.addEventListener("DOMContentLoaded", () => {
     redirectToHpp();
   });
 });
+
 
