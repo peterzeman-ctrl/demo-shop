@@ -6,7 +6,7 @@ const cartItems = [
   { name: "Wool Beanie", desc: "One size • Grey", price: 12.90 },
 ];
 
-const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(n);
+const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "NOK" }).format(n);
 
 function renderCart() {
   const cart = document.getElementById("cart");
@@ -64,5 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
     redirectToHpp();
   });
 });
+
 
 
