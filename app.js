@@ -1,9 +1,9 @@
 // Put your pre-generated hosted payment page redirect URLs here.
 // They will be rotated on every page load (refresh).
 const HPP_REDIRECT_URLS = [
-  "https://computop-paygate.com/paymentpage.aspx?token=b4c2cb6cb6ca454d84988096f8a24d86",
-  "https://computop-paygate.com/paymentpage.aspx?token=49cb020432ab4f329a44403843abb3cd",
-  "https://computop-paygate.com/paymentpage.aspx?token=bf25208826f942f1b1f48069a4ca4fc6",
+  "https://computop-paygate.com/paymentpage.aspx?token=40a44c4761af415c9e6c9a571422db4d",
+  "https://computop-paygate.com/paymentpage.aspx?token=d72b7b107d474d8e83a4a5e223987cb9",
+  "https://computop-paygate.com/paymentpage.aspx?token=82f833981d1d491d9eecc0aa04274a07",
   // ...
 ];
 
@@ -16,7 +16,7 @@ const cartItems = [
 ];
 
 const fmt = (n) =>
-  new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(n);
+  new Intl.NumberFormat("de-DE", { style: "currency", currency: "NOK" }).format(n);
 
 // Picks the next URL on each page load and persists the index.
 // If you open in a new browser/profile, rotation starts at 0 again.
@@ -104,3 +104,4 @@ document.addEventListener("DOMContentLoaded", () => {
     redirectToHpp();
   });
 });
+
