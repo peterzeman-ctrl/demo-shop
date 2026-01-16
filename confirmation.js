@@ -5,7 +5,7 @@ const cartItems = [
 
 const defaultShipping = 4.90;
 
-const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(n);
+const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "NOK" }).format(n);
 
 function qs(name) {
   return new URLSearchParams(window.location.search).get(name);
@@ -88,3 +88,4 @@ document.addEventListener("DOMContentLoaded", () => {
   updateTotals();
   setupReceiptDownload();
 });
+
