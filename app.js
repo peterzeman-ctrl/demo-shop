@@ -1,12 +1,12 @@
 // Put your pre-generated hosted payment page redirect URLs here.
 // They will be rotated on every page load (refresh).
 const HPP_REDIRECT_URLS = [
-  "https://computop-paygate.com/paymentpage.aspx?token=fb0830713b05472788d6b551ff50a21a",
-  "https://computop-paygate.com/paymentpage.aspx?token=3c86614b03874d4fbf9b225515e7ac8a",
-  "https://computop-paygate.com/paymentpage.aspx?token=1b8676226bec4247afa97409efbdb29d",
-  "https://computop-paygate.com/paymentpage.aspx?token=8a60edf00a9a40a39cd8e94206bfad45",
-  "https://computop-paygate.com/paymentpage.aspx?token=d2acabbf4b4943b0a1b5b6073dd2b168",
-  "https://computop-paygate.com/paymentpage.aspx?token=504b0c69fb1d42bf830ff37f3009b1a0",
+  "https://computop-paygate.com/paymentpage.aspx?token=813fe3d4aeca451fa8152c30aa4e6f13",
+  "https://computop-paygate.com/paymentpage.aspx?token=65b5932571ac4a0d8fce4a7ff1236d16",
+  "https://computop-paygate.com/paymentpage.aspx?token=e92e9c1ed66a40e68ce823d3a40fdb9e",
+  "https://computop-paygate.com/paymentpage.aspx?token=7aee8d5817c84316aa9253bdd99650ec",
+  "https://computop-paygate.com/paymentpage.aspx?token=aaaecbf290f84a488e7629d87f27addc",
+  "https://computop-paygate.com/paymentpage.aspx?token=ccf8c07ba4874ef1814e583a0387f3a1",
   // ...
 ];
 
@@ -107,5 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
     redirectToHpp();
   });
 });
+
 
 
