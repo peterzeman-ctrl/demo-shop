@@ -220,6 +220,42 @@ h2 { margin: 0 0 10px; font-size: 18px; }
   font-size: 12px;
   line-height: 1.4;
 }
+/* Key-value payment details block */
+.kvBox {
+  margin: 10px 0 14px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.03);
+}
+
+.kvRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.kvRow:last-child { border-bottom: 0; }
+
+.kvKey {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.kvVal {
+  color: var(--text);
+  font-weight: 700;
+  text-align: right;
+}
+
+.dccNote {
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+
 
 
 
