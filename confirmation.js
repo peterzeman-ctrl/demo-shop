@@ -1,11 +1,11 @@
 const cartItems = [
-  { name: "Nordic Winter Jacket", desc: "Size L • Color Black", price: 49.90 },
-  { name: "Wool Beanie", desc: "One size • Grey", price: 12.90 },
+  { name: "Nordic Winter Jacket", desc: "Size L • Color Black", price: 90.00 },
+  { name: "Wool Beanie", desc: "One size • Grey", price: 25.00 },
 ];
 
-const defaultShipping = 4.90;
+const defaultShipping = 5.00;
 
-const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "NOK" }).format(n);
+const fmt = (n) => new Intl.NumberFormat("de-DE", { style: "currency", currency: "EUR" }).format(n);
 
 function qs(name) {
   return new URLSearchParams(window.location.search).get(name);
@@ -88,4 +88,5 @@ document.addEventListener("DOMContentLoaded", () => {
   updateTotals();
   setupReceiptDownload();
 });
+
 
